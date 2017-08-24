@@ -11,7 +11,7 @@ let basePath = 'src';
 let outPath = 'dist';
 
 gulp.task('less', function () {
-    return gulp.src(`src/less/main.less`)
+    return gulp.src(`${basePath}/less/main.less`)
         .pipe(sourcemaps.init())
 		.pipe(plumber())
         .pipe(less())
@@ -45,7 +45,7 @@ gulp.task('imagemin', function () {
         .pipe(gulp.dest(`${outPath}/images`));
 });
 
-gulp.task('default', ['less', 'html', 'imagemin'], function () {
+gulp.task('default', ['js', 'less', 'html', 'imagemin'], function () {
     gulp.watch(`${basePath}/less/**/*.less`, ['less']);
     gulp.watch(`${basePath}/*.html`, ['html']);
 });
