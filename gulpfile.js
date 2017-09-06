@@ -35,7 +35,7 @@ gulp.task('js', function () {
 });
 
 gulp.task('imagemin', function () {
-    return gulp.src(`${basePath}/images/*.{png, jpg, gif, ico}`)
+    return gulp.src(`${basePath}/images/*.{png,jpg,gif,ico}`)
         .pipe(imagemin({
             optimizationLevel: 5,
             progressive: true,
